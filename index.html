@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tejasai Bodepudi - Editor Portfolio</title>
+  <title>TJ | Video Editor Portfolio</title>
   <link rel="stylesheet" href="style.css" />
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
@@ -55,6 +55,7 @@
       color: #f7006b;
     }
 
+    /* Floating animation for logos */
     .logo {
       position: absolute;
       width: 60px;
@@ -80,14 +81,57 @@
       0% { transform: scale(1); opacity: 1; }
       100% { transform: scale(2); opacity: 0; }
     }
+
+    section {
+      padding: 50px 20px;
+      text-align: center;
+      z-index: 1;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      color: #f7006b;
+    }
+
+    section p {
+      font-size: 1.2rem;
+      color: #ccc;
+    }
+
+    .btn {
+      background-color: #f7006b;
+      padding: 10px 20px;
+      text-decoration: none;
+      color: white;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: transparent;
+      color: #f7006b;
+      border: 2px solid #f7006b;
+    }
+
+    video {
+      width: 320px;
+      height: 180px;
+      margin: 20px 0;
+    }
+
+    iframe {
+      margin: 20px 0;
+    }
   </style>
 </head>
 <body>
 
+  <!-- Centered Text Section -->
   <div class="centered-text">
-    <h1>HI, I'M TEJASAI BODEPUDI</h1>
+    <h1>HI, I'M Tejasai Bodepudi</h1>
     <p>Video Editor | Visual Storyteller</p>
-    <a href="#work" class="watch-button">WATCH MY WORK</a>
+    <a href="#projects" class="watch-button">WATCH MY WORK</a>
   </div>
 
   <!-- Logo Icons (Floating and Bursting) -->
@@ -97,8 +141,33 @@
   <img src="https://cdn-icons-png.flaticon.com/512/5968/5968705.png" class="logo" style="bottom: 20%; right: 10%;">
   <img src="https://seeklogo.com/images/C/capcut-logo-0D35F4CC0C-seeklogo.com.png" class="logo" style="top: 40%; left: 50%;">
 
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I’m passionate about video editing and storytelling. I use Premiere Pro, After Effects, and more to bring stories to life.</p>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2>My Projects</h2>
+    <video controls>
+      <source src="assets/videos/sample.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <!-- Embed YouTube -->
+    <iframe width="320" height="180" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Let’s Connect</h2>
+    <p>Email: <a href="mailto:editwithteja@gmail.com">editwithteja@gmail.com</a></p>
+    <p>Instagram: <a href="https://instagram.com/tejaaa.3">@tejaaa.3</a></p>
+  </section>
+
+  <!-- Script for Floating and Bursting Logos -->
   <script>
-    // Floating animation
+    // Floating animation for logos
     const logos = document.querySelectorAll('.logo');
     logos.forEach((logo, i) => {
       logo.style.animation = `float ${3 + i}s ease-in-out infinite`;
@@ -114,6 +183,5 @@
       });
     });
   </script>
-  <script src="script.js"></script>
 </body>
 </html>
