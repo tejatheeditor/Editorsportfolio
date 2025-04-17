@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Poppins:wght@300;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(-45deg, #0f0f0f, #1c1c1c, #111111, #000000);
+  background-size: 400% 400%;
+  animation: bgShift 10s ease infinite;
+  font-family: 'Poppins', sans-serif;
+  color: #f5f5f5;
+  overflow-x: hidden;
+}
+
+@keyframes bgShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  animation: fadeIn 2s ease-out;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(-30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.hero h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 3rem;
+  text-transform: uppercase;
+  color: #ff0059;
+  animation: glitch 1s infinite;
+  letter-spacing: 2px;
+}
+
+@keyframes glitch {
+  0% { text-shadow: 2px 2px #00f, -2px -2px #0ff; }
+  50% { text-shadow: -2px 0 #ff0, 2px 2px #f0f; }
+  100% { text-shadow: 2px 2px #0f0, -2px -2px #f00; }
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin: 10px 0 20px;
+  color: #aaa;
+  animation: fadeInUp 2.5s ease-out;
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.btn {
+  padding: 12px 30px;
+  border: 2px solid #ff0059;
+  color: #ff0059;
+  text-transform: uppercase;
+  font-weight: bold;
+  background: transparent;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #ff0059;
+  color: black;
+  box-shadow: 0 0 10px #ff0059, 0 0 20px #ff0059;
+  transform: scale(1.05);
+}
+
+section {
+  padding: 60px 20px;
+  text-align: center;
+  animation: fadeIn 2s ease forwards;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+video {
+  border: 3px solid #ff0059;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #ff0059;
+  margin-top: 20px;
+  width: 320px;
+  height: auto;
+}
+
+a {
+  color: #ff0059;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+a:hover {
+  text-shadow: 0 0 5px #ff0059;
+}
