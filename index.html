@@ -3,25 +3,117 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cinematic Editor Portfolio</title>
-  <!-- Link to external CSS file -->
+  <title>Tejasai Bodepudi - Editor Portfolio</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #0d0d0d;
+      overflow: hidden;
+      font-family: 'Orbitron', sans-serif;
+      color: white;
+    }
+
+    .centered-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      z-index: 2;
+    }
+
+    .centered-text h1 {
+      font-size: 3rem;
+      color: #f7006b;
+      text-shadow: 2px 2px 4px #00ff66;
+    }
+
+    .centered-text p {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+      color: #ccc;
+    }
+
+    .watch-button {
+      margin-top: 1.5rem;
+      padding: 10px 20px;
+      background: #f7006b;
+      color: white;
+      border: 2px solid #f7006b;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .watch-button:hover {
+      background: transparent;
+      color: #f7006b;
+    }
+
+    .logo {
+      position: absolute;
+      width: 60px;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .logo:hover {
+      transform: scale(1.2) rotate(10deg);
+    }
+
+    .burst {
+      animation: burst 0.5s forwards;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-30px); }
+      100% { transform: translateY(0px); }
+    }
+
+    @keyframes burst {
+      0% { transform: scale(1); opacity: 1; }
+      100% { transform: scale(2); opacity: 0; }
+    }
+  </style>
 </head>
 <body>
-  <div class="center-text">
+
+  <div class="centered-text">
     <h1>HI, I'M TEJASAI BODEPUDI</h1>
     <p>Video Editor | Visual Storyteller</p>
-    <button onclick="location.href='#'">WATCH MY WORK</button>
+    <a href="#work" class="watch-button">WATCH MY WORK</a>
   </div>
 
-  <!-- Logos -->
-  <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Adobe_After_Effects_CC_icon.svg" class="logo" alt="After Effects" />
-  <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Adobe_Premiere_Pro_CC_icon.svg" class="logo" alt="Premiere Pro" />
-  <img src="https://upload.wikimedia.org/wikipedia/commons/d/d2/Filmora_logo_2021.svg" class="logo" alt="Filmora" />
-  <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Canva_icon_2021.svg" class="logo" alt="Canva" />
-  <img src="https://seeklogo.com/images/C/capcut-logo-3313715EAB-seeklogo.com.png" class="logo" alt="CapCut" />
+  <!-- Logo Icons (Floating and Bursting) -->
+  <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Adobe_After_Effects_CC_icon.svg" class="logo" style="top: 10%; left: 5%;">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Adobe_Premiere_Pro_CC_icon.svg" class="logo" style="top: 20%; right: 8%;">
+  <img src="https://cdn-icons-png.flaticon.com/512/5968/5968523.png" class="logo" style="bottom: 15%; left: 10%;">
+  <img src="https://cdn-icons-png.flaticon.com/512/5968/5968705.png" class="logo" style="bottom: 20%; right: 10%;">
+  <img src="https://seeklogo.com/images/C/capcut-logo-0D35F4CC0C-seeklogo.com.png" class="logo" style="top: 40%; left: 50%;">
 
-  <!-- Link to external JavaScript file -->
+  <script>
+    // Floating animation
+    const logos = document.querySelectorAll('.logo');
+    logos.forEach((logo, i) => {
+      logo.style.animation = `float ${3 + i}s ease-in-out infinite`;
+    });
+
+    // On hover, burst and disappear
+    logos.forEach(logo => {
+      logo.addEventListener('mouseenter', () => {
+        logo.classList.add('burst');
+        setTimeout(() => {
+          logo.style.display = 'none';
+        }, 500);
+      });
+    });
+  </script>
   <script src="script.js"></script>
 </body>
 </html>
