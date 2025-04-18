@@ -655,7 +655,84 @@
     </section>
     
     <!-- Works Section -->
-  <!-- Works Section -->
+<style>
+  #works {
+    padding: 60px 0;
+    background-color: #000;
+    color: #fff;
+  }
+  .works-title {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #b8c6ff;
+    font-weight: 700;
+  }
+  .divider {
+    width: 80px;
+    height: 3px;
+    background-color: #b8c6ff;
+    margin: 0 auto 40px;
+  }
+  .works-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  .work-item {
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #111;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+  .work-thumbnail {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .work-info {
+    padding: 15px;
+  }
+  .work-title {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: #fff;
+  }
+  .work-category {
+    color: #b8c6ff;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+  }
+  .view-button {
+    background-color: #b8c6ff;
+    color: #000;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  @media (max-width: 1200px) {
+    .works-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  @media (max-width: 768px) {
+    .works-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (max-width: 480px) {
+    .works-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<!-- Works Section -->
 <section id="works">
     <h2 class="works-title">My Works</h2>
     <div class="divider"></div>
